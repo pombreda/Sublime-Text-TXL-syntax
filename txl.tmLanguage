@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>txl</string>
+		<string>grm</string>
+	</array>
+	<key>name</key>
+	<string>TXL</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Main keywords</string>
+			<key>match</key>
+			<string>\b(?&lt;!')(define|end|function|keys|compounds|tokens|comments|replace|construct|by|replace|rule|deconstruct|not|where|all|not|assert|export|import|redefine|external|match|skipping|include|then)\b</string>
+			<key>name</key>
+			<string>keyword.control</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Preprocessor keywords</string>
+			<key>match</key>
+			<string>(?&lt;!')#\s*(pragma|endif|else|define|undef|undefine|ifn|elifn|elifdef|elifndef|ifndef|ifdef|if|end)</string>
+			<key>name</key>
+			<string>meta.preprocessor</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?&lt;!')%[\({]</string>
+			<key>comment</key>
+			<string>Multi-line comments</string>
+			<key>end</key>
+			<string>(?&lt;!')[\)}]%</string>
+			<key>name</key>
+			<string>comment</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Comments</string>
+			<key>match</key>
+			<string>(?&lt;!')%.*</string>
+			<key>name</key>
+			<string>comment</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Built in functions, conditionals, repeats, etc</string>
+			<key>match</key>
+			<string>(?&lt;!')\[(not|opt|repeat|list|see|push|pop|\+|-|/|\*|=|&lt;|&gt;|\^|\.|div|rem|:|#|index|_|length|select|head|tail|,|~=|&gt;=|&lt;=|grep|\$|quote|unquote|parse|unparse|reparse|typeof|istype|read|write|fget|getp|fput|putp|fputp|fputs|fclose|fopen|fgets|message|pragma|quit|system|pipe|attr) .+?\]</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Formatting hints</string>
+			<key>match</key>
+			<string>(?&lt;!')\[(NL|EX(_\d+)?|IN(_\d+)?|SP(_\d+)?|TAB(_\d+)?|SPON|SPOFF|\!|round|trunc|toupper|tolower|get|put|gets|print|printattr|debug|breakpoint)\]</string>
+			<key>name</key>
+			<string>constant.language</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Regular non-terminals</string>
+			<key>match</key>
+			<string>(?&lt;!')\[.+?\]</string>
+			<key>name</key>
+			<string>storage.type</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Numbers (including floating point)</string>
+			<key>match</key>
+			<string>\b(\d+)|(\d+\.\d+([\+-][Ee]\d+)?)\b</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>String literals</string>
+			<key>match</key>
+			<string>".*"</string>
+			<key>name</key>
+			<string>string.quoted.double</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.syntax_name</string>
+	<key>uuid</key>
+	<string>fd861065-7297-4ca1-bd27-2568e7d7a654</string>
+</dict>
+</plist>

@@ -1,0 +1,49 @@
+// [PackageDev] target_format: plist, ext: tmLanguage
+    { "name": "TXL",
+  "scopeName": "source.syntax_name",
+  "fileTypes": ["txl", "grm"],
+  "uuid": "fd861065-7297-4ca1-bd27-2568e7d7a654",
+
+  "patterns": [
+    { "match": "\\b(?<!')(define|end|function|keys|compounds|tokens|comments|replace|construct|by|replace|rule|deconstruct|not|where|all|not|assert|export|import|redefine|external|match|skipping|include|then)\\b",
+      "name": "keyword.control",
+      "comment": "Main keywords"
+    },
+    { "match": "(?<!')#\\s*(pragma|endif|else|define|undef|undefine|ifn|elifn|elifdef|elifndef|ifndef|ifdef|if|end)",
+      "name": "meta.preprocessor",
+      "captures": {
+            "1": { "name": "keyword.control" }
+      },
+      "comment": "Preprocessor keywords"
+    },
+    { "begin": "(?<!')%[\\({]",
+      "end": "(?<!')[\\)}]%",
+      "name": "comment",
+      "comment": "Multi-line comments"
+    },
+    { "match": "(?<!')%.*",
+      "name": "comment",
+      "comment": "Comments"
+    },
+    { "match": "(?<!')\\[(not|opt|repeat|list|see|push|pop|\\+|-|/|\\*|=|<|>|\\^|\\.|div|rem|:|#|index|_|length|select|head|tail|,|~=|>=|<=|grep|\\$|quote|unquote|parse|unparse|reparse|typeof|istype|read|write|fget|getp|fput|putp|fputp|fputs|fclose|fopen|fgets|message|pragma|quit|system|pipe|attr) .+?\\]",
+      "name": "entity.name.function",
+      "comment": "Built in functions, conditionals, repeats, etc"
+    },
+    { "match": "(?<!')\\[(NL|EX(_\\d+)?|IN(_\\d+)?|SP(_\\d+)?|TAB(_\\d+)?|SPON|SPOFF|\\!|round|trunc|toupper|tolower|get|put|gets|print|printattr|debug|breakpoint)\\]",
+      "name": "constant.language",
+      "comment": "Formatting hints"
+    },
+    { "match": "(?<!')\\[.+?\\]",
+      "name": "storage.type",
+      "comment": "Regular non-terminals"
+    },
+    { "match": "\\b(\\d+)|(\\d+\\.\\d+([\\+-][Ee]\\d+)?)\\b",
+      "name": "constant.numeric",
+      "comment": "Numbers (including floating point)"
+    },
+    { "match": "\".*\"",
+      "name": "string.quoted.double",
+      "comment": "String literals"
+    }
+  ]
+}
