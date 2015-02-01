@@ -1,6 +1,6 @@
 // [PackageDev] target_format: plist, ext: tmLanguage
     { "name": "TXL",
-  "scopeName": "source.syntax_name",
+  "scopeName": "source.txl",
   "fileTypes": ["txl", "grm"],
   "uuid": "fd861065-7297-4ca1-bd27-2568e7d7a654",
 
