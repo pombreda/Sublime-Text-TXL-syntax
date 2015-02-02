@@ -95,7 +95,7 @@
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>source.syntax_name</string>
+	<string>source.txl</string>
 	<key>uuid</key>
 	<string>fd861065-7297-4ca1-bd27-2568e7d7a654</string>
 </dict>
